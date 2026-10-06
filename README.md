@@ -1,7 +1,7 @@
 # itzfizz-scroll-hero
 Scroll-driven hero animation with a moving car, count-up stats and pinned section, built with HTML, CSS, JavaScript and GSAP ScrollTrigger.
 
-*Live demo:* add your GitHub Pages link here
+*Live demo:* https://manvijaiswal-09.github.io/itzfizz-scroll-hero/
 
 ## Features
 
@@ -35,7 +35,7 @@ itzfizz-scroll-hero/
 
 1. Clone the repository:
    bash
-   git clone https://github.com/your-username/itzfizz-scroll-hero.git
+   git clone https://manvijaiswal-09.github.io/itzfizz-scroll-hero/
    
 2. Open the folder:
    bash
