@@ -1,0 +1,244 @@
+/* ============================================
+   Itzfizz scroll hero  |  style.css
+   ============================================ */
+
+:root {
+    --bg: #0b0d12;
+    --bg-soft: #121620;
+    --text: #f4f5f7;
+    --muted: #8d94a5;
+    --accent: #ff5a36;
+    --card: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at 50% 0%, #1a2030 0%, var(--bg) 65%);
+}
+
+.hero__glow {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    width: 70vw;
+    height: 70vw;
+    max-width: 900px;
+    max-height: 900px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255, 90, 54, 0.18), transparent 65%);
+    pointer-events: none;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    width: min(1100px, 92%);
+    text-align: center;
+    padding-bottom: 18vh;
+}
+
+/* ---------- HEADLINE ---------- */
+.headline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: clamp(1.7rem, 6.2vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    line-height: 1.1;
+    margin-right: -0.22em; /* balance the trailing letter-spacing */
+    perspective: 600px;
+}
+
+.headline .char {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+.headline .space {
+    width: 0.5em;
+}
+
+.hero__sub {
+    margin-top: 1rem;
+    font-size: clamp(0.8rem, 1.6vw, 1rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* ---------- STATS ---------- */
+.stats {
+    margin-top: clamp(1.5rem, 5vh, 3rem);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.6rem, 1.6vw, 1.25rem);
+}
+
+.stat {
+    padding: clamp(0.8rem, 2vw, 1.4rem) clamp(0.6rem, 1.4vw, 1rem);
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    will-change: transform, opacity;
+}
+
+.stat__number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+
+.stat__label {
+    margin-top: 0.35rem;
+    font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+/* ---------- ROAD + CAR ---------- */
+.road {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24vh;
+    min-height: 130px;
+    z-index: 1;
+}
+
+.road__surface {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 55%;
+    background: linear-gradient(#171b25, #0e1118);
+    border-top: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.road__dashes {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 22%;
+    height: 4px;
+    will-change: transform;
+}
+
+.road__dashes span {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.car {
+    position: absolute;
+    left: 0;
+    bottom: calc(55% - 20px);
+    width: clamp(130px, 22vw, 260px);
+    height: auto;
+    transform-origin: 50% 100%;
+    will-change: transform;
+    filter: drop-shadow(0 8px 8px rgba(0,0,0,0.45));
+}
+
+/* ---------- SCROLL HINT ---------- */
+.scroll-hint {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.scroll-hint i {
+    display: block;
+    width: 1px;
+    height: 34px;
+    background: linear-gradient(var(--accent), transparent);
+}
+
+/* ---------- NEXT SECTION ---------- */
+.next {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 4rem 1.5rem;
+    background: var(--bg-soft);
+}
+
+.next h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+}
+
+.next p {
+    max-width: 520px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 720px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero__content {
+        padding-bottom: 22vh;
+    }
+
+    .scroll-hint {
+        display: none;
+    }
+}
+
+/* Respect reduced motion: script.js also checks this */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-hint i {
+        display: none;
+    }
+}

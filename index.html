@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Itzfizz | Scroll Hero Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <!-- HERO SECTION: this whole block is pinned while the user scrolls -->
+        <section class="hero" id="hero">
+            <div class="hero__glow" aria-hidden="true"></div>
+
+            <div class="hero__content">
+                <!-- Letters are split into <span>s by script.js -->
+                <h1 class="headline" id="headline" aria-label="Welcome Itzfizz">WELCOME ITZFIZZ</h1>
+                <p class="hero__sub">Scroll to take the ride</p>
+
+                <!-- Impact metrics -->
+                <div class="stats" id="stats">
+                    <article class="stat">
+                        <p class="stat__number"><span class="stat__value" data-value="58">58</span>%</p>
+                        <p class="stat__label">Faster page load times</p>
+                    </article>
+                    <article class="stat">
+                        <p class="stat__number"><span class="stat__value" data-value="27">27</span>%</p>
+                        <p class="stat__label">Higher user engagement</p>
+                    </article>
+                    <article class="stat">
+                        <p class="stat__number"><span class="stat__value" data-value="92">92</span>%</p>
+                        <p class="stat__label">Client satisfaction</p>
+                    </article>
+                    <article class="stat">
+                        <p class="stat__number"><span class="stat__value" data-value="40">40</span>%</p>
+                        <p class="stat__label">Lower bounce rate</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Road + car -->
+            <div class="road" id="road" aria-hidden="true">
+                <div class="road__surface"></div>
+                <div class="road__dashes" id="dashes"></div>
+
+                <svg class="car" id="car" viewBox="0 0 240 90" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="120" cy="84" rx="100" ry="5" fill="rgba(0,0,0,0.45)"/>
+                    <!-- body -->
+                    <path d="M10 62 C10 52 18 47 34 44 L66 40 C80 26 100 18 124 18 H152 C170 18 184 30 194 41 L218 47 C230 50 232 57 232 64 V70 H10 Z" fill="#ff5a36"/>
+                    <!-- lower shade -->
+                    <path d="M10 62 H232 V70 H10 Z" fill="#d8431f"/>
+                    <!-- windows -->
+                    <path d="M76 40 C88 29 104 23 124 23 H132 V40 Z" fill="#14202e"/>
+                    <path d="M138 23 H152 C164 23 175 31 184 40 H138 Z" fill="#14202e"/>
+                    <!-- door line + handle -->
+                    <path d="M134 42 V66" stroke="#d8431f" stroke-width="2"/>
+                    <rect x="120" y="50" width="10" height="3" rx="1.5" fill="#d8431f"/>
+                    <!-- lights -->
+                    <rect x="222" y="50" width="10" height="5" rx="2" fill="#ffe9a8"/>
+                    <rect x="10" y="52" width="8" height="5" rx="2" fill="#b3261e"/>
+                    <!-- wheels -->
+                    <g class="car__wheel">
+                        <circle cx="64" cy="70" r="17" fill="#101114"/>
+                        <circle cx="64" cy="70" r="9" fill="#c9ccd1"/>
+                        <circle cx="64" cy="70" r="3" fill="#101114"/>
+                    </g>
+                    <g class="car__wheel">
+                        <circle cx="180" cy="70" r="17" fill="#101114"/>
+                        <circle cx="180" cy="70" r="9" fill="#c9ccd1"/>
+                        <circle cx="180" cy="70" r="3" fill="#101114"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="scroll-hint" aria-hidden="true">
+                <span>Scroll</span>
+                <i></i>
+            </div>
+        </section>
+
+        <!-- Content after the hero so the page keeps scrolling naturally -->
+        <section class="next">
+            <h2>Built with HTML, CSS, JavaScript and GSAP</h2>
+            <p>The car moves with your scroll position, not with time. Scroll back up and it drives in reverse.</p>
+        </section>
+    </main>
+
+    <!-- GSAP + ScrollTrigger from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
